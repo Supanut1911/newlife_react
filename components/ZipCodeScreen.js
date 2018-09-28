@@ -5,7 +5,11 @@ const availableZipItems = [
     { place: 'Trang', code: '92000' },
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
-    { place: 'Chonburi', code: '20000' },
+    { place: 'Bangkok', code: '10100' },
+    { place: 'Phuket', code: '83000' },
+    { place: 'Songkla', code: '90000' },
+    { place: 'Lampang', code: '52000' },
+    { place: 'Kabi', code: '80240' },
 ]
 const ZipItem = ({ place, code, navigate }) => (
     <TouchableHighlight onPress={() => navigate('Weather', { zipCode: code })}>
