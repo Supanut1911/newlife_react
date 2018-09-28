@@ -15,7 +15,25 @@ export default class Weather extends React.Component {
     doIt = () => {
         console.log("Hello from console")
     }
-    
+    fetchData = () => {
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.props.zipCode},th&units=metric&APPID=1d2822a6e2fc38ebd9bb825f2dda2cca`)
+            .then((response) => response.json())
+            .then((json) => {
+                this.setState(
+                    {
+                        forecast: {
+                            main: json.weather[0].main,
+                            description: json.weather[0].description,
+                            temp: json.main.temp
+                        }
+                    });
+            })
+            .catch((error) => {
+                console.warn(error);
+            });
+    }
+
+    componentDidMount = () => this.fetchData()
     render() {
         return (
             <View style={styles.container}>
@@ -24,7 +42,7 @@ export default class Weather extends React.Component {
 
 
 
-                        <Text >Zip code is {this.props.zipCode}.</Text>
+                        <Text style={{ color: 'white', fontSize: 30, opacity: 0.5 }}>Zip code is {this.props.zipCode}.</Text>
 
 
                         <Forecast {...this.state.forecast} />
