@@ -43,17 +43,20 @@ export default class Weather extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+
                 <ImageBackground source={require('../bg.jpeg')} style={styles.backdrop}>
-                    <View style={styles.flexbox}>
+                    <ImageBackground source={require('../dark_grey_-_prisma_grande.jpg')} style={styles.backdrop2}>
+                        <View style={styles.flexbox} >
 
 
 
-                        <Text style={{ color: 'white', fontSize: 30, opacity: 0.5 }}>Zip code is {this.props.zipCode}.</Text>
+                            <Text style={{ color: 'white', fontSize: 30, opacity: 0.5,margin:20}}>Zip code is {this.props.zipCode}.</Text>
 
 
-                        <Forecast {...this.state.forecast} />
-                    </View>
+                            <Forecast {...this.state.forecast} />
+                        </View>
 
+                    </ImageBackground>
                 </ImageBackground>
             </View>
         );
@@ -62,6 +65,7 @@ export default class Weather extends React.Component {
 const styles = StyleSheet.create({
     container: { paddingTop: 25 },
     backdrop: { width: '100%', height: '100%' },
+    backdrop2: { width: '100%', height: '50%', opacity: 0.7 },
     flexbox:
     {
         flex: 1,
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
         /*opacity:0.5,*/
         //backgroundColor:'grey',
     },
+   
 
 
 
