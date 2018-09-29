@@ -8,7 +8,8 @@ export default class Forecast extends React.Component {
                 <Text style={{ color: 'white', fontSize: 30 ,textAlign:'center' ,margin:20}}>{this.props.main}</Text>
                 <Text style={{ color: 'white', fontSize: 30, textAlign: 'center', margin: 20}}>{this.props.description}</Text>
                 <Text style={{ color: 'white', fontSize: 30, textAlign: 'center', margin: 20}}>{this.props.temp}°C</Text>
-
+                <Text style={{ color: 'white', fontSize: 20, textAlign: 'center', margin: 20}}>by Supanut Laddayam</Text>
+                <Text style={{ color: 'white', fontSize: 20, textAlign: 'center', margin: 20 }}>5935512049</Text>
             </View>
         );
     }
